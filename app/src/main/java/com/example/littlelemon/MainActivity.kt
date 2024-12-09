@@ -47,11 +47,11 @@ class MainActivity : ComponentActivity() {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     LaunchedEffect(Unit) {
                         try {
-                            val menus: HttpResponse = httpClient
-                                .get("https://raw.githubusercontent.com/Meta-Mobile-Developer-PC/Working-With-Data-API/main/menu.json")
-                            Log.d("Menu", menus.status.toString())
-                            menuItems.value = menus.body<MenuNetworkData>()
                             withContext(Dispatchers.IO) {
+                                val menus: HttpResponse = httpClient
+                                    .get("https://raw.githubusercontent.com/Meta-Mobile-Developer-PC/Working-With-Data-API/main/menu.json")
+                                Log.d("Menu", menus.status.toString())
+                                menuItems.value = menus.body<MenuNetworkData>()
                                 menuItems.value?.menu?.forEach {
                                     databaseRepository.insertMenuItems(menuItems = it.toMenuItemLocal())
                                 }
@@ -60,10 +60,7 @@ class MainActivity : ComponentActivity() {
                             Log.e("Error", e.message.toString())
                         }
                     }
-
-                    HomeScreen(
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                    MyNavigation(modifier = Modifier.padding(innerPadding))
                 }
             }
         }

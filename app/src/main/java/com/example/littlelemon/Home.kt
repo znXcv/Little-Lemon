@@ -48,6 +48,8 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.NavHostController
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
 import com.example.littlelemon.data.DatabaseRepository
@@ -62,6 +64,7 @@ import kotlinx.coroutines.launch
 @Composable
 fun HomeScreen(
     modifier: Modifier = Modifier,
+    navController: NavHostController
 ) {
     val scope = rememberCoroutineScope()
     val context = LocalContext.current
@@ -117,7 +120,7 @@ fun HomeScreen(
                         .padding(16.dp)
                         .clip(CircleShape)
                         .clickable {
-
+                            navController.navigate(ProfileDes.route)
                         }
                 )
             }
@@ -337,7 +340,7 @@ fun CustomSearchBar(modifier: Modifier = Modifier, onSearched: (String) -> Unit)
 @Composable
 fun HomeScreePreview() {
     HomeScreen(
-
+        navController = NavHostController(LocalContext.current)
     )
 }
 

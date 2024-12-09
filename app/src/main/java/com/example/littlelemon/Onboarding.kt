@@ -13,7 +13,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -32,6 +31,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.littlelemon.ui.theme.littleLemonColor
+import com.example.littlelemon.ui.theme.onSecondaryLight
+import com.example.littlelemon.ui.theme.secondaryLight
 import kotlinx.coroutines.launch
 
 @Composable
@@ -62,7 +63,7 @@ fun Onboarding(
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .background(color = MaterialTheme.colorScheme.primary)
+                .background(color = secondaryLight)
                 .height(100.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
@@ -73,7 +74,8 @@ fun Onboarding(
                     .fillMaxWidth(),
                 style = TextStyle(
                     fontSize = 24.sp
-                )
+                ),
+                color = onSecondaryLight
             )
         }
 

@@ -16,11 +16,15 @@ fun MyNavigation(modifier: Modifier = Modifier) {
                 modifier = modifier
             )
         }
-
-
         composable(ProfileDes.route) {
             Profile(
                 navHostController = navController,
+                modifier = modifier
+            )
+        }
+        composable(HomeDes.route) {
+            HomeScreen(
+                navController = navController,
                 modifier = modifier
             )
         }
