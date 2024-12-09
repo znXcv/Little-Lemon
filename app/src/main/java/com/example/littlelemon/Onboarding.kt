@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -30,9 +31,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
-import com.example.littlelemon.ui.theme.HomeDes
-import com.example.littlelemon.ui.theme.LemonTitleColor
-import com.example.littlelemon.ui.theme.LittleLemonColor
+import com.example.littlelemon.ui.theme.littleLemonColor
 import kotlinx.coroutines.launch
 
 @Composable
@@ -63,7 +62,7 @@ fun Onboarding(
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .background(color = LemonTitleColor)
+                .background(color = MaterialTheme.colorScheme.primary)
                 .height(100.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
@@ -169,7 +168,7 @@ fun Onboarding(
                         navController.navigate(HomeDes.route)
                     }
                 },
-                colors = ButtonDefaults.buttonColors(containerColor = LittleLemonColor),
+                colors = ButtonDefaults.buttonColors(containerColor = littleLemonColor),
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(bottom = 34.dp)

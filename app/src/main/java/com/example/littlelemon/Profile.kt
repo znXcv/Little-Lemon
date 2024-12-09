@@ -1,4 +1,4 @@
-package com.example.littlelemon.ui.theme
+package com.example.littlelemon
 
 import android.content.Context
 import androidx.compose.foundation.Image
@@ -24,7 +24,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
-import com.example.littlelemon.R
+import com.example.littlelemon.ui.theme.littleLemonColor
 
 @Composable
 fun Profile(
@@ -132,7 +132,7 @@ fun Profile(
                         .apply()
                     navHostController.navigate(OnboardingDes.route)
                 },
-                colors = ButtonDefaults.buttonColors(containerColor = LittleLemonColor),
+                colors = ButtonDefaults.buttonColors(containerColor = littleLemonColor),
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(bottom = 34.dp)

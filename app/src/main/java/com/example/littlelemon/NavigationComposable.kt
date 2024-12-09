@@ -1,11 +1,10 @@
-package com.example.littlelemon.ui.theme
+package com.example.littlelemon
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.littlelemon.Onboarding
 
 @Composable
 fun MyNavigation(modifier: Modifier = Modifier) {
@@ -18,12 +17,6 @@ fun MyNavigation(modifier: Modifier = Modifier) {
             )
         }
 
-        composable(HomeDes.route) {
-            HomeScree(
-                navController = navController,
-                modifier = modifier
-            )
-        }
 
         composable(ProfileDes.route) {
             Profile(

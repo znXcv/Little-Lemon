@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Little Lemon</string>
+    <string name="city_name">Chicago</string>
+    <string name="short_description">We are a family-owned Mediterranean restaurant,
+        focused on traditional recipes served with a modern twist</string>
+    <string name="order_for_delivery">ORDER FOR DELIVERY!</string>
+    <string name="search_phrase">Enter search phrase</string>
 </resources>
